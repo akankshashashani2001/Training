@@ -1,0 +1,40 @@
+public class SimpleCalculator {
+    public static void main(String[] args) {
+        if (args.length < 3 || args.length % 2 == 0) {
+            System.out.println("Usage: java SimpleCalculator <num1> <operator> <num2> [<operator> <num>] ...");
+            return;
+        }
+        
+        double result = Double.parseDouble(args[0]);
+        
+        for (int i = 1; i < args.length - 1; i += 2) {
+            String operator = args[i];
+            double num = Double.parseDouble(args[i + 1]);
+            
+            switch(operator) {
+                case "+":
+                    result += num;
+                    break;
+                case "-":
+                    result -= num;
+                    break;
+                case "*":
+                    result *= num;
+                    break;
+                case "/":
+                    if (num != 0) {
+                        result /= num;
+                    } else {
+                        System.out.println("Error: Cannot divide by zero.");
+                        return;
+                    }
+                    break;
+                default:
+                    System.out.println("Error: Invalid operator.");
+                    return;
+            }
+        }
+        
+        System.out.println("Result: " + result);
+    }
+}
