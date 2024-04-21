@@ -3,9 +3,9 @@ public class RecuSumArray {
     
     public static int sumArray(int[] a, int ind) {
                 if (ind == a.length - 1) {
-            return arr[ind];
+            return a[ind];
         }
-                return arr[ind] + sumArray(arr, ind + 1);
+                return a[ind] + sumArray(a, ind + 1);
     }
     
     public static void main(String[] args) {
