@@ -1,0 +1,16 @@
+
+public class RecuSumArray {
+    
+    public static int sumArray(int[] a, int ind) {
+                if (ind == a.length - 1) {
+            return arr[ind];
+        }
+                return arr[ind] + sumArray(arr, ind + 1);
+    }
+    
+    public static void main(String[] args) {
+        int[] a = {1, 2, 3, 4, 5};
+        int sum = sumArray(a, 0);
+        System.out.println("Sum of array elements: " + sum);
+    }
+}
