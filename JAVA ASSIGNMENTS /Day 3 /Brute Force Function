@@ -1,0 +1,31 @@
+package assign;
+
+import java.util.Arrays;
+
+public class BruteForceSortProgram {
+	public static void main(String[] args) {
+		int[] a = InitializeArray(10);
+		BruteForceSort(a);
+		System.out.println("Sorted Arrays: "+Arrays.toString(a));
+	}
+	
+	public static void BruteForceSort(int[] a) {
+		for(int i =0;i<a.length;i++) {
+			for(int j=i+1;j<a.length;j++) {
+				if(a[j]<a[i]) {
+					int Sort = a[i];
+					a[i] =a[j];
+				    a[j] = Sort;	
+				}
+			}
+		}
+	}
+	public static int[] InitializeArray(int size) {
+		int[] a = new int[size];
+		for(int i=0;i<size;i++) {
+			a[i] = (int) (Math.random() * 100);
+		}
+		return a;
+	}
+
+}
