@@ -1,0 +1,24 @@
+package assign;
+
+public class StringManipulation {
+	public static void main(String[] args) {
+		String s1 = "Hello";
+		String s2 = "World";
+		int length = 4;
+		
+		String res = getMiddleSubstring(s1, s2, length);
+		System.out.println("Middle substring: " +res);
+	}
+	public static String getMiddleSubstring(String s1, String s2, int length) {
+		String concantenated = s1.concat(s2);
+		StringBuilder reversed = new StringBuilder(concantenated).reverse();
+		int concatLength = concantenated.length();
+		int startIndex = (concatLength - length) / 2;
+		if(concatLength == 0 || length >concatLength) {
+			return "Invalid input";
+		}
+		String middleSubstring = reversed.substring(startIndex, startIndex + length);
+		return middleSubstring;
+	}
+
+}
